@@ -1,0 +1,1350 @@
+{
+  "schema_version": 2,
+  "company": "ARM",
+  "purpose": "Generic ARM award catalog for mapping Fidelity/NetBenefits award names, grant dates, vesting dates, and French tax treatment.",
+  "qualification_policy": {
+    "primary_sources": [
+      "employer_plan_document",
+      "award_detail_pdf",
+      "employer_payroll_or_tax_guidance"
+    ],
+    "fidelity_rule": "Fidelity labels identify award names, grant dates, and share sources; Fidelity labels do not by themselves prove French qualified status.",
+    "workbook_fallback": {
+      "enabled": true,
+      "source_file": "RSUs-French_Tax_Declaration workbook",
+      "rule": "If a known award is not confirmed by employer plan documents or payroll, trust the RSU workbook classification."
+    }
+  },
+  "fidelity_share_source_labels": {
+    "RS": {
+      "meaning": "Restricted stock / RSU source",
+      "tax_use": "Use award catalog and award documents to determine qualified vs non-qualified."
+    },
+    "SP": {
+      "meaning": "Stock purchase / ESPP source",
+      "tax_use": "Treat separately from RSU/free-share awards."
+    },
+    "AEPFRA": {
+      "meaning": "All Employee Plan France label",
+      "tax_use": "Map to the AEP France award when grant details match."
+    },
+    "RSUFRA": {
+      "meaning": "French-related RSU label",
+      "tax_use": "Map by award name, grant date, and award document."
+    },
+    "AN": {
+      "meaning": "Annual award label",
+      "tax_use": "Map by award name and grant date."
+    }
+  },
+  "awards": [
+    {
+      "canonical_name": "2019 AEP France",
+      "instrument": "rsu_free_share",
+      "award_family": "AEP France",
+      "qualified": true,
+      "french_tax_treatment": "qualified_free_share",
+      "classification_sources": [
+        "rsu_workbook_reward_tab"
+      ],
+      "fidelity_matching": {
+        "case_insensitive_exact_names": [
+          "2019 AEP France"
+        ],
+        "contains_all_tokens": [
+          [
+            "2019",
+            "AEP"
+          ],
+          [
+            "AEPFRA"
+          ]
+        ],
+        "grant_date_anchors": [
+          "2019-12-10",
+          "2022-03-04"
+        ],
+        "share_source_hints": [
+          "AEPFRA",
+          "RS"
+        ]
+      },
+      "reward_tab_row": 12,
+      "grant_date": "2019-12-10",
+      "special_vest_date": "2024-03-13",
+      "reward_workbook_notes": "Mail from \"Rene Haas\" called \"All Employee Plan RSU vesting outcome\" sent on the \"October 25, 2023\"",
+      "vesting_tranches": [
+        {
+          "sequence": 1,
+          "vest_date": "2019-12-10"
+        },
+        {
+          "sequence": 2,
+          "vest_date": "2020-02-15"
+        },
+        {
+          "sequence": 3,
+          "vest_date": "2020-05-15"
+        },
+        {
+          "sequence": 4,
+          "vest_date": "2020-08-15"
+        },
+        {
+          "sequence": 5,
+          "vest_date": "2020-11-15"
+        },
+        {
+          "sequence": 6,
+          "vest_date": "2021-02-15"
+        },
+        {
+          "sequence": 7,
+          "vest_date": "2021-05-15"
+        },
+        {
+          "sequence": 8,
+          "vest_date": "2021-08-15"
+        },
+        {
+          "sequence": 9,
+          "vest_date": "2021-11-15"
+        },
+        {
+          "sequence": 10,
+          "vest_date": "2022-02-15"
+        },
+        {
+          "sequence": 11,
+          "vest_date": "2022-05-15"
+        },
+        {
+          "sequence": 12,
+          "vest_date": "2022-08-15"
+        },
+        {
+          "sequence": 13,
+          "vest_date": "2022-11-15"
+        },
+        {
+          "sequence": 14,
+          "vest_date": "2023-02-15"
+        },
+        {
+          "sequence": 15,
+          "vest_date": "2023-05-15"
+        },
+        {
+          "sequence": 16,
+          "vest_date": "2023-08-15"
+        },
+        {
+          "sequence": 17,
+          "vest_date": "2023-11-15"
+        },
+        {
+          "sequence": 18,
+          "vest_date": "2024-02-15"
+        },
+        {
+          "sequence": 19,
+          "vest_date": "2024-03-13",
+          "vesting_percentage": 100.0,
+          "tax_method": "net-shares"
+        }
+      ],
+      "vesting_schedule_pattern": null
+    },
+    {
+      "canonical_name": "Annual RSU award 2022",
+      "instrument": "rsu_free_share",
+      "award_family": "Annual RSU Award",
+      "qualified": false,
+      "french_tax_treatment": "non_qualified_rsu",
+      "classification_sources": [
+        "rsu_workbook_reward_tab",
+        "payroll_non_qualified_wording_seen_in_workspace"
+      ],
+      "fidelity_matching": {
+        "case_insensitive_exact_names": [
+          "Annual RSU award 2022",
+          "ANNUAL RSU AWARD"
+        ],
+        "grant_date_anchors": [
+          "2022-06-20"
+        ],
+        "share_source_hints": [
+          "RS",
+          "AN"
+        ]
+      },
+      "reward_tab_row": 18,
+      "grant_date": "2022-06-20",
+      "special_vest_date": null,
+      "reward_workbook_notes": "Mail from \"Kirsty Gill\" called \"RSU plan updates\" sent on the \"November 9, 2023\"",
+      "vesting_tranches": [
+        {
+          "sequence": 1,
+          "vest_date": "2022-06-20"
+        },
+        {
+          "sequence": 2,
+          "vest_date": "2022-08-15"
+        },
+        {
+          "sequence": 3,
+          "vest_date": "2022-11-15"
+        },
+        {
+          "sequence": 4,
+          "vest_date": "2023-02-15"
+        },
+        {
+          "sequence": 5,
+          "vest_date": "2023-05-15",
+          "vesting_percentage": 36.0
+        },
+        {
+          "sequence": 6,
+          "vest_date": "2023-08-15"
+        },
+        {
+          "sequence": 7,
+          "vest_date": "2023-11-15",
+          "vesting_percentage": 24.0,
+          "tax_method": "withhold-to-cover"
+        },
+        {
+          "sequence": 8,
+          "vest_date": "2024-02-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "withhold-to-cover"
+        },
+        {
+          "sequence": 9,
+          "vest_date": "2024-05-15",
+          "vesting_percentage": 4.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2024-05-17"
+        },
+        {
+          "sequence": 10,
+          "vest_date": "2024-05-16",
+          "vesting_percentage": 4.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2024-05-20"
+        },
+        {
+          "sequence": 11,
+          "vest_date": "2024-08-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2024-08-16"
+        },
+        {
+          "sequence": 12,
+          "vest_date": "2024-11-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2024-11-18"
+        },
+        {
+          "sequence": 13,
+          "vest_date": "2025-02-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2025-02-19"
+        },
+        {
+          "sequence": 14,
+          "vest_date": "2025-05-15"
+        },
+        {
+          "sequence": 15,
+          "vest_date": "2025-08-15"
+        },
+        {
+          "sequence": 16,
+          "vest_date": "2025-11-15"
+        },
+        {
+          "sequence": 17,
+          "vest_date": "2026-02-15"
+        },
+        {
+          "sequence": 18,
+          "vest_date": "2026-05-15"
+        },
+        {
+          "sequence": 19,
+          "vest_date": "2026-08-15"
+        }
+      ],
+      "vesting_schedule_pattern": "arm_limited_rsu_award_plan_annual"
+    },
+    {
+      "canonical_name": "Annual Bonus substitution 2022",
+      "instrument": "rsu_free_share",
+      "award_family": "Annual Bonus Substitution",
+      "qualified": false,
+      "french_tax_treatment": "non_qualified_rsu",
+      "classification_sources": [
+        "rsu_workbook_reward_tab"
+      ],
+      "fidelity_matching": {
+        "case_insensitive_exact_names": [
+          "Annual Bonus substitution 2022",
+          "ANNUAL BONUS SUBSTITUTION 2022"
+        ],
+        "grant_date_anchors": [
+          "2022-11-11"
+        ],
+        "share_source_hints": [
+          "RS",
+          "AN"
+        ]
+      },
+      "reward_tab_row": 24,
+      "grant_date": "2022-11-11",
+      "special_vest_date": null,
+      "vesting_tranches": [
+        {
+          "sequence": 1,
+          "vest_date": "2022-11-11"
+        },
+        {
+          "sequence": 2,
+          "vest_date": "2022-11-15"
+        },
+        {
+          "sequence": 3,
+          "vest_date": "2023-02-15"
+        },
+        {
+          "sequence": 4,
+          "vest_date": "2023-05-15",
+          "vesting_percentage": 36.0
+        },
+        {
+          "sequence": 5,
+          "vest_date": "2023-08-15"
+        },
+        {
+          "sequence": 6,
+          "vest_date": "2023-11-15",
+          "vesting_percentage": 24.0,
+          "tax_method": "withhold-to-cover"
+        },
+        {
+          "sequence": 7,
+          "vest_date": "2024-02-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "withhold-to-cover"
+        },
+        {
+          "sequence": 8,
+          "vest_date": "2024-05-15",
+          "vesting_percentage": 4.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2024-05-17"
+        },
+        {
+          "sequence": 9,
+          "vest_date": "2024-05-16",
+          "vesting_percentage": 4.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2024-05-20"
+        },
+        {
+          "sequence": 10,
+          "vest_date": "2024-08-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2024-08-16"
+        },
+        {
+          "sequence": 11,
+          "vest_date": "2024-11-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2024-11-18"
+        },
+        {
+          "sequence": 12,
+          "vest_date": "2025-02-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2025-02-19"
+        },
+        {
+          "sequence": 13,
+          "vest_date": "2025-05-15"
+        },
+        {
+          "sequence": 14,
+          "vest_date": "2025-08-15"
+        },
+        {
+          "sequence": 15,
+          "vest_date": "2025-11-15"
+        },
+        {
+          "sequence": 16,
+          "vest_date": "2026-02-15"
+        },
+        {
+          "sequence": 17,
+          "vest_date": "2026-05-15"
+        },
+        {
+          "sequence": 18,
+          "vest_date": "2026-08-15"
+        },
+        {
+          "sequence": 19,
+          "vest_date": "2026-11-15"
+        }
+      ],
+      "vesting_schedule_pattern": "arm_limited_rsu_award_plan_annual"
+    },
+    {
+      "canonical_name": "New Starter Award (pre-IPO)",
+      "instrument": "rsu_free_share",
+      "award_family": "New Starter RSU Award",
+      "qualified": false,
+      "french_tax_treatment": "non_qualified_rsu",
+      "classification_sources": [
+        "rsu_workbook_reward_tab"
+      ],
+      "fidelity_matching": {
+        "case_insensitive_exact_names": [
+          "New Starter Award (pre-IPO)",
+          "NEW STARTER AWARD",
+          "NEW STARTER RSU AWARD"
+        ],
+        "contains_all_tokens": [
+          [
+            "NEW",
+            "STARTER",
+            "PRE-IPO"
+          ],
+          [
+            "NEW",
+            "STARTER",
+            "PRE IPO"
+          ]
+        ],
+        "share_source_hints": [
+          "RS"
+        ]
+      },
+      "reward_tab_row": 30,
+      "grant_date": null,
+      "special_vest_date": null,
+      "reward_workbook_notes": "All the details must be in the documents associated with the contract",
+      "vesting_tranches": [],
+      "vesting_schedule_pattern": "arm_limited_rsu_award_plan_new_starter"
+    },
+    {
+      "canonical_name": "Annual RSU award 2023",
+      "instrument": "rsu_free_share",
+      "award_family": "Annual RSU Award",
+      "qualified": false,
+      "french_tax_treatment": "non_qualified_rsu",
+      "classification_sources": [
+        "rsu_workbook_reward_tab",
+        "payroll_non_qualified_wording_seen_in_workspace"
+      ],
+      "fidelity_matching": {
+        "case_insensitive_exact_names": [
+          "Annual RSU award 2023",
+          "ANNUAL RSU AWARD"
+        ],
+        "grant_date_anchors": [
+          "2023-05-22"
+        ],
+        "share_source_hints": [
+          "RS",
+          "AN"
+        ]
+      },
+      "reward_tab_row": 36,
+      "grant_date": "2023-05-22",
+      "special_vest_date": null,
+      "reward_workbook_notes": "Mail from \"Kirsty Gill\" called \"RSU plan updates\" sent on the \"November 9, 2023\"",
+      "vesting_tranches": [
+        {
+          "sequence": 1,
+          "vest_date": "2023-05-22"
+        },
+        {
+          "sequence": 2,
+          "vest_date": "2023-08-15"
+        },
+        {
+          "sequence": 3,
+          "vest_date": "2023-11-15"
+        },
+        {
+          "sequence": 4,
+          "vest_date": "2024-02-15"
+        },
+        {
+          "sequence": 5,
+          "vest_date": "2024-05-15",
+          "vesting_percentage": 18.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2024-05-17"
+        },
+        {
+          "sequence": 6,
+          "vest_date": "2024-05-16",
+          "vesting_percentage": 18.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2024-05-20"
+        },
+        {
+          "sequence": 7,
+          "vest_date": "2024-08-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2024-08-16"
+        },
+        {
+          "sequence": 8,
+          "vest_date": "2024-11-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2024-11-18"
+        },
+        {
+          "sequence": 9,
+          "vest_date": "2025-02-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "sell-to-cover",
+          "sell_to_cover_sale_date": "2025-02-19"
+        },
+        {
+          "sequence": 10,
+          "vest_date": "2025-05-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "withhold-to-cover"
+        },
+        {
+          "sequence": 11,
+          "vest_date": "2025-08-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "withhold-to-cover"
+        },
+        {
+          "sequence": 12,
+          "vest_date": "2025-11-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "withhold-to-cover"
+        },
+        {
+          "sequence": 13,
+          "vest_date": "2026-02-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "withhold-to-cover"
+        },
+        {
+          "sequence": 14,
+          "vest_date": "2026-05-15",
+          "vesting_percentage": 8.0,
+          "tax_method": "withhold-to-cover"
+        },
+        {
+          "sequence": 15,
+          "vest_date": "2026-08-15"
+        },
+        {
+          "sequence": 16,
+          "vest_date": "2026-11-15"
+        },
+        {
+          "sequence": 17,
+          "vest_date": "2027-02-15"
+        },
+        {
+          "sequence": 18,
+          "vest_date": "2027-05-15"
+        },
+        {
+          "sequence": 19,
+          "vest_date": "2027-08-15"
+        }
+      ],
+      "vesting_schedule_pattern": "arm_limited_rsu_award_plan_annual"
+    },
+    {
+      "canonical_name": "New Starter Award (post-IPO, vesting over 3 years)",
+      "instrument": "rsu_free_share",
+      "award_family": "New Starter RSU Award",
+      "qualified": true,
+      "french_tax_treatment": "qualified_free_share",
+      "classification_sources": [
+        "rsu_workbook_reward_tab"
+      ],
+      "fidelity_matching": {
+        "case_insensitive_exact_names": [
+          "New Starter Award (post-IPO, vesting over 3 years)"
+        ],
+        "contains_all_tokens": [
+          [
+            "NEW",
+            "STARTER",
+            "POST-IPO",
+            "3"
+          ],
+          [
+            "NEW",
+            "STARTER",
+            "POST IPO",
+            "3"
+          ]
+        ],
+        "share_source_hints": [
+          "RS",
+          "RSUFRA"
+        ]
+      },
+      "reward_tab_row": 42,
+      "grant_date": null,
+      "special_vest_date": null,
+      "reward_workbook_notes": "All the details must be in the documents associated with the contract",
+      "vesting_tranches": [],
+      "vesting_schedule_pattern": "arm_2024_france_subplan_new_starter"
+    },
+    {
+      "canonical_name": "New Starter Award (post-IPO, vesting over 4 years)",
+      "instrument": "rsu_free_share",
+      "award_family": "New Starter RSU Award",
+      "qualified": true,
+      "french_tax_treatment": "qualified_free_share",
+      "classification_sources": [
+        "rsu_workbook_reward_tab"
+      ],
+      "fidelity_matching": {
+        "case_insensitive_exact_names": [
+          "New Starter Award (post-IPO, vesting over 4 years)"
+        ],
+        "contains_all_tokens": [
+          [
+            "NEW",
+            "STARTER",
+            "POST-IPO",
+            "4"
+          ],
+          [
+            "NEW",
+            "STARTER",
+            "POST IPO",
+            "4"
+          ]
+        ],
+        "share_source_hints": [
+          "RS",
+          "RSUFRA"
+        ]
+      },
+      "reward_tab_row": 48,
+      "grant_date": null,
+      "special_vest_date": null,
+      "reward_workbook_notes": "All the details must be in the documents associated with the contract",
+      "vesting_tranches": [],
+      "vesting_schedule_pattern": "arm_2024_france_subplan_new_starter"
+    },
+    {
+      "canonical_name": "Annual RSU award 2024",
+      "instrument": "rsu_free_share",
+      "award_family": "Annual RSU Award",
+      "qualified": true,
+      "french_tax_treatment": "qualified_free_share",
+      "classification_sources": [
+        "2024_france_subplan_document",
+        "rsu_workbook_reward_tab"
+      ],
+      "fidelity_matching": {
+        "case_insensitive_exact_names": [
+          "Annual RSU award 2024",
+          "ANNUAL RSU AWARD"
+        ],
+        "grant_date_anchors": [
+          "2024-05-13"
+        ],
+        "share_source_hints": [
+          "RS",
+          "AN",
+          "RSUFRA"
+        ]
+      },
+      "reward_tab_row": 54,
+      "grant_date": "2024-05-13",
+      "special_vest_date": null,
+      "reward_workbook_notes": "Mail from \"Rene Haas\" called \"Please read: Changes to FYE25 Reward\" sent on the \"March 19, 2024\"",
+      "vesting_tranches": [
+        {
+          "sequence": 1,
+          "vest_date": "2024-05-13"
+        },
+        {
+          "sequence": 2,
+          "vest_date": "2024-05-15"
+        },
+        {
+          "sequence": 3,
+          "vest_date": "2024-05-16"
+        },
+        {
+          "sequence": 4,
+          "vest_date": "2024-08-15"
+        },
+        {
+          "sequence": 5,
+          "vest_date": "2024-11-15"
+        },
+        {
+          "sequence": 6,
+          "vest_date": "2025-02-15"
+        },
+        {
+          "sequence": 7,
+          "vest_date": "2025-05-15"
+        },
+        {
+          "sequence": 8,
+          "vest_date": "2025-08-15",
+          "vesting_percentage": 35.0,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 9,
+          "vest_date": "2025-11-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 10,
+          "vest_date": "2026-02-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 11,
+          "vest_date": "2026-05-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 12,
+          "vest_date": "2026-08-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 13,
+          "vest_date": "2026-11-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 14,
+          "vest_date": "2027-02-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 15,
+          "vest_date": "2027-05-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 16,
+          "vest_date": "2027-08-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 17,
+          "vest_date": "2027-11-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 18,
+          "vest_date": "2028-02-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 19,
+          "vest_date": "2028-05-15"
+        }
+      ],
+      "vesting_schedule_pattern": "arm_2024_france_subplan_annual"
+    },
+    {
+      "canonical_name": "Annual RSU award 2025",
+      "instrument": "rsu_free_share",
+      "award_family": "Annual RSU Award",
+      "qualified": true,
+      "french_tax_treatment": "qualified_free_share",
+      "classification_sources": [
+        "rsu_workbook_reward_tab"
+      ],
+      "fidelity_matching": {
+        "case_insensitive_exact_names": [
+          "Annual RSU award 2025",
+          "ANNUAL RSU AWARD"
+        ],
+        "grant_date_anchors": [
+          "2025-05-01"
+        ],
+        "share_source_hints": [
+          "RS",
+          "AN",
+          "RSUFRA"
+        ]
+      },
+      "reward_tab_row": 60,
+      "grant_date": "2025-05-01",
+      "special_vest_date": null,
+      "vesting_tranches": [
+        {
+          "sequence": 1,
+          "vest_date": "2025-05-01"
+        },
+        {
+          "sequence": 2,
+          "vest_date": "2025-05-15"
+        },
+        {
+          "sequence": 3,
+          "vest_date": "2025-08-15"
+        },
+        {
+          "sequence": 4,
+          "vest_date": "2025-11-15"
+        },
+        {
+          "sequence": 5,
+          "vest_date": "2026-02-15"
+        },
+        {
+          "sequence": 6,
+          "vest_date": "2026-05-15"
+        },
+        {
+          "sequence": 7,
+          "vest_date": "2026-08-15",
+          "vesting_percentage": 35.0,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 8,
+          "vest_date": "2026-11-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 9,
+          "vest_date": "2027-02-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 10,
+          "vest_date": "2027-05-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 11,
+          "vest_date": "2027-08-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 12,
+          "vest_date": "2027-11-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 13,
+          "vest_date": "2028-02-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 14,
+          "vest_date": "2028-05-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 15,
+          "vest_date": "2028-08-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 16,
+          "vest_date": "2028-11-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 17,
+          "vest_date": "2029-02-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 18,
+          "vest_date": "2029-05-15"
+        },
+        {
+          "sequence": 19,
+          "vest_date": "2029-08-15"
+        }
+      ],
+      "vesting_schedule_pattern": "arm_2024_france_subplan_annual"
+    },
+    {
+      "canonical_name": "ESPP August 2025",
+      "instrument": "espp",
+      "award_family": "ESPP",
+      "qualified": false,
+      "french_tax_treatment": "espp_stock_purchase",
+      "classification_sources": [
+        "rsu_workbook_reward_tab",
+        "arm_servicenow_guidance_discount_taxable_through_payroll",
+        "payroll_espp_deduction_seen_in_workspace"
+      ],
+      "fidelity_matching": {
+        "case_insensitive_exact_names": [
+          "ESPP August 2025"
+        ],
+        "contains_all_tokens": [
+          [
+            "ESPP",
+            "AUGUST",
+            "2025"
+          ]
+        ],
+        "grant_date_anchors": [
+          "2025-03-03",
+          "2025-08-29"
+        ],
+        "share_source_hints": [
+          "SP"
+        ]
+      },
+      "reward_tab_row": 66,
+      "grant_date": "2025-08-29",
+      "special_vest_date": "2025-08-29",
+      "vesting_tranches": [
+        {
+          "sequence": 1,
+          "vest_date": "2025-08-29",
+          "vesting_percentage": 100.0,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 2,
+          "vest_date": "2025-11-15"
+        },
+        {
+          "sequence": 3,
+          "vest_date": "2026-02-15"
+        },
+        {
+          "sequence": 4,
+          "vest_date": "2026-05-15"
+        },
+        {
+          "sequence": 5,
+          "vest_date": "2026-08-15"
+        },
+        {
+          "sequence": 6,
+          "vest_date": "2026-11-15"
+        },
+        {
+          "sequence": 7,
+          "vest_date": "2027-02-15"
+        },
+        {
+          "sequence": 8,
+          "vest_date": "2027-05-15"
+        },
+        {
+          "sequence": 9,
+          "vest_date": "2027-08-15"
+        },
+        {
+          "sequence": 10,
+          "vest_date": "2027-11-15"
+        },
+        {
+          "sequence": 11,
+          "vest_date": "2028-02-15"
+        },
+        {
+          "sequence": 12,
+          "vest_date": "2028-05-15"
+        },
+        {
+          "sequence": 13,
+          "vest_date": "2028-08-15"
+        },
+        {
+          "sequence": 14,
+          "vest_date": "2028-11-15"
+        },
+        {
+          "sequence": 15,
+          "vest_date": "2029-02-15"
+        },
+        {
+          "sequence": 16,
+          "vest_date": "2029-05-15"
+        },
+        {
+          "sequence": 17,
+          "vest_date": "2029-08-15"
+        },
+        {
+          "sequence": 18,
+          "vest_date": "2029-11-15"
+        },
+        {
+          "sequence": 19,
+          "vest_date": "2030-02-15"
+        }
+      ],
+      "vesting_schedule_pattern": "espp_purchase"
+    },
+    {
+      "canonical_name": "ESPP February 2026",
+      "instrument": "espp",
+      "award_family": "ESPP",
+      "qualified": false,
+      "french_tax_treatment": "espp_stock_purchase",
+      "classification_sources": [
+        "rsu_workbook_reward_tab",
+        "arm_servicenow_guidance_discount_taxable_through_payroll",
+        "payroll_espp_deduction_seen_in_workspace"
+      ],
+      "fidelity_matching": {
+        "case_insensitive_exact_names": [
+          "ESPP February 2026"
+        ],
+        "contains_all_tokens": [
+          [
+            "ESPP",
+            "FEBRUARY",
+            "2026"
+          ]
+        ],
+        "grant_date_anchors": [
+          "2025-09-02",
+          "2026-02-28"
+        ],
+        "share_source_hints": [
+          "SP"
+        ]
+      },
+      "reward_tab_row": 72,
+      "grant_date": "2026-02-28",
+      "special_vest_date": "2026-02-27",
+      "vesting_tranches": [
+        {
+          "sequence": 1,
+          "vest_date": "2026-02-27",
+          "vesting_percentage": 100.0,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 2,
+          "vest_date": "2026-05-15"
+        },
+        {
+          "sequence": 3,
+          "vest_date": "2026-08-15"
+        },
+        {
+          "sequence": 4,
+          "vest_date": "2026-11-15"
+        },
+        {
+          "sequence": 5,
+          "vest_date": "2027-02-15"
+        },
+        {
+          "sequence": 6,
+          "vest_date": "2027-05-15"
+        },
+        {
+          "sequence": 7,
+          "vest_date": "2027-08-15"
+        },
+        {
+          "sequence": 8,
+          "vest_date": "2027-11-15"
+        },
+        {
+          "sequence": 9,
+          "vest_date": "2028-02-15"
+        },
+        {
+          "sequence": 10,
+          "vest_date": "2028-05-15"
+        },
+        {
+          "sequence": 11,
+          "vest_date": "2028-08-15"
+        },
+        {
+          "sequence": 12,
+          "vest_date": "2028-11-15"
+        },
+        {
+          "sequence": 13,
+          "vest_date": "2029-02-15"
+        },
+        {
+          "sequence": 14,
+          "vest_date": "2029-05-15"
+        },
+        {
+          "sequence": 15,
+          "vest_date": "2029-08-15"
+        },
+        {
+          "sequence": 16,
+          "vest_date": "2029-11-15"
+        },
+        {
+          "sequence": 17,
+          "vest_date": "2030-02-15"
+        },
+        {
+          "sequence": 18,
+          "vest_date": "2030-05-15"
+        },
+        {
+          "sequence": 19,
+          "vest_date": "2030-08-15"
+        }
+      ],
+      "vesting_schedule_pattern": "espp_purchase"
+    },
+    {
+      "canonical_name": "Annual RSU award 2026",
+      "instrument": "rsu_free_share",
+      "award_family": "Annual RSU Award",
+      "qualified": true,
+      "french_tax_treatment": "qualified_free_share",
+      "classification_sources": [
+        "rsu_workbook_reward_tab"
+      ],
+      "fidelity_matching": {
+        "case_insensitive_exact_names": [
+          "Annual RSU award 2026",
+          "ANNUAL RSU AWARD"
+        ],
+        "grant_date_anchors": [
+          "2026-05-01"
+        ],
+        "share_source_hints": [
+          "RS",
+          "AN",
+          "RSUFRA"
+        ]
+      },
+      "reward_tab_row": 78,
+      "grant_date": "2026-05-01",
+      "special_vest_date": null,
+      "vesting_tranches": [
+        {
+          "sequence": 1,
+          "vest_date": "2026-05-01"
+        },
+        {
+          "sequence": 2,
+          "vest_date": "2026-05-15"
+        },
+        {
+          "sequence": 3,
+          "vest_date": "2026-08-15"
+        },
+        {
+          "sequence": 4,
+          "vest_date": "2026-11-15"
+        },
+        {
+          "sequence": 5,
+          "vest_date": "2027-02-15"
+        },
+        {
+          "sequence": 6,
+          "vest_date": "2027-05-15"
+        },
+        {
+          "sequence": 7,
+          "vest_date": "2027-08-15",
+          "vesting_percentage": 35.0,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 8,
+          "vest_date": "2027-11-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 9,
+          "vest_date": "2028-02-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 10,
+          "vest_date": "2028-05-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 11,
+          "vest_date": "2028-08-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 12,
+          "vest_date": "2028-11-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 13,
+          "vest_date": "2029-02-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 14,
+          "vest_date": "2029-05-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 15,
+          "vest_date": "2029-08-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 16,
+          "vest_date": "2029-11-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 17,
+          "vest_date": "2030-02-15",
+          "vesting_percentage": 6.5,
+          "tax_method": "net-shares"
+        },
+        {
+          "sequence": 18,
+          "vest_date": "2030-05-15"
+        },
+        {
+          "sequence": 19,
+          "vest_date": "2030-08-15"
+        }
+      ],
+      "vesting_schedule_pattern": "arm_2024_france_subplan_annual"
+    }
+  ],
+  "reward_workbook_source": {
+    "workbook": "RSUs-French_Tax_Declaration workbook",
+    "sheet": "Reward",
+    "extraction_note": "Common award/reward-tab structure only. User share quantities, user closed-lot assignments, and generated tax outputs are intentionally not included.",
+    "rules": {
+      "qualified_flag": "Reward tab column E: 1 means qualified, 0 means non-qualified.",
+      "grant_date": "Reward tab column A when present. Blank means user must provide an actual grant date from Fidelity/award documents.",
+      "special_vest_date": "Reward tab column D when present.",
+      "vesting_tranches": "Reward tab columns L:AD, using Date / Percentage / Tax method / Sale date rows for each award block.",
+      "share_counts": "Not included. Each user must provide granted-share counts from Fidelity or award documents."
+    }
+  },
+  "vesting_schedule_patterns": {
+    "arm_2024_france_subplan_annual": {
+      "source": "_award_details_pages/2024planInformationDocument.pdf",
+      "applies_to": "Annual Awards granted under the 2024 France Sub-Plan to the ARM Holdings plc 2023 Omnibus Incentive Plan.",
+      "vesting_dates": "Mid-point date of the earliest calendar quarter starting more than one year after the award date, then the mid-point date of each calendar quarter thereafter.",
+      "tranches": [
+        {
+          "sequence": 1,
+          "percentage": 35.0
+        },
+        {
+          "sequence": "2-11",
+          "percentage": 6.5,
+          "repeat_count": 10
+        }
+      ]
+    },
+    "arm_2024_france_subplan_new_starter": {
+      "source": "_award_details_pages/2024planInformationDocument.pdf",
+      "applies_to": "New Starter Awards granted under the 2024 France Sub-Plan to the ARM Holdings plc 2023 Omnibus Incentive Plan.",
+      "vesting_dates": "Mid-point date of the earliest calendar quarter starting more than one year after the award date, then the mid-point date of each calendar quarter thereafter.",
+      "tranches": [
+        {
+          "sequence": 1,
+          "percentage": 48.0
+        },
+        {
+          "sequence": "2-7",
+          "percentage": 6.0,
+          "repeat_count": 6
+        },
+        {
+          "sequence": "8-11",
+          "percentage": 4.0,
+          "repeat_count": 4
+        }
+      ]
+    },
+    "arm_limited_rsu_award_plan_annual": {
+      "source": "rsufaq.pdf",
+      "applies_to": "Older Arm Limited Annual RSU Awards.",
+      "vesting_dates": "Pre-IPO vesting is annual. Post-IPO, after the first annual vest, outstanding RSUs convert to quarterly vesting with the first quarterly vest on the last day of the first calendar quarter following the IPO and subsequent quarterly vesting on the last day of each calendar quarter thereafter.",
+      "tranches": "Use the individual Fidelity award details or award certificate for exact percentages."
+    },
+    "arm_limited_rsu_award_plan_new_starter": {
+      "source": "rsufaq.pdf",
+      "applies_to": "Older Arm Limited New Starter RSU Awards.",
+      "vesting_dates": "Pre-IPO vesting is annual. Post-IPO, after the first annual vest, outstanding RSUs convert to quarterly vesting with the first quarterly vest on the mid-point date of the first calendar quarter following the IPO and subsequent quarterly vesting on each quarter mid-point date.",
+      "mid_point_dates": {
+        "Q1": "February 15",
+        "Q2": "May 15",
+        "Q3": "August 15",
+        "Q4": "November 15"
+      },
+      "tranches": "Use the individual Fidelity award details or award certificate for exact percentages."
+    },
+    "espp_purchase": {
+      "source": "ARM ESPP payroll/Fidelity evidence",
+      "applies_to": "ARM ESPP stock purchase lots.",
+      "vesting_dates": "Purchase date.",
+      "plan_discount_percent": 15.0
+    }
+  }
+}

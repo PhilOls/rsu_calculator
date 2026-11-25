@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "description": "Shared receiving-institution defaults for the Fidelity transfer-of-assets form. Keep user-specific account numbers and account holder names out of this file.",
+  "personal_fields_not_included": [
+    "account_number",
+    "account_full_name",
+    "intermediary_account_number"
+  ],
+  "profiles": {
+    "Interactive Brokers LLC": {
+      "institution_name": "Interactive Brokers LLC",
+      "telephone": "203-618-5800",
+      "registration_type": "Individual/Cash",
+      "contact_name": "Clearing operations",
+      "contact_email": "assettransferservice@interactivebrokers.com",
+      "intermediary_name": "Interactive Brokers LLC",
+      "dtc_number": "0534",
+      "intermediary_phone": "203-618-5800"
+    },
+    "Societe Generale Service Securities": {
+      "institution_name": "Societe Generale Service Securities",
+      "registration_type": "Ordinary securities account",
+      "contact_email": "service.virements@sgss.socgen.com",
+      "intermediary_name": "BBH",
+      "dtc_number": "DTC 00010"
+    }
+  }
+}

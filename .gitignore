@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+.cache/
+
+# Generated calculator outputs
+rsu_tax_declaration_*.detail.csv
+rsu_tax_declaration_*.summary.json
+rsu_tax_declaration_*.xlsx
+
+# User-specific financial inputs
+View closed lots.csv
+View open lots.csv
+Webstat_Export_fr_5385698.csv
+*_config.json
+
+# Local/editor noise
+.DS_Store
+
+# Windows installer-generated launcher
+Run ARM RSU Tax Calculator.cmd
