@@ -15261,7 +15261,7 @@ If this field is empty, no automatic backup is performed.
             text="Describe the issue. The current program version will be added automatically.",
         ).grid(row=0, column=0, sticky="w", padx=12, pady=(12, 6))
 
-        title_var = tk.StringVar(value="ARM RSU Tax Calculator issue")
+        title_var = tk.StringVar(value="RSU Tax Calculator issue")
         ttk.Label(popup, text="Title").grid(row=1, column=0, sticky="w", padx=12, pady=(0, 3))
         ttk.Entry(popup, textvariable=title_var).grid(row=2, column=0, sticky="ew", padx=12, pady=(0, 8))
 
@@ -15279,7 +15279,7 @@ If this field is empty, no automatic backup is performed.
                 messagebox.showwarning("Report Issue", "Describe the issue before opening GitHub.")
                 description_text.focus_set()
                 return
-            title = title_var.get().strip() or "ARM RSU Tax Calculator issue"
+            title = title_var.get().strip() or "RSU Tax Calculator issue"
             description = build_issue_description(user_text)
             open_github_issue(title, description)
             popup.destroy()
